@@ -130,7 +130,7 @@ print("Percentage of employees who did not leave the company (stayed) =", 1.*len
 left_df.describe()
 ```
 
- <img src= "https://user-images.githubusercontent.com/66487971/91657325-c3597500-eac8-11ea-9a8a-2392c1584be9.png" width = 600>
+ <img src= "https://user-images.githubusercontent.com/66487971/91657325-c3597500-eac8-11ea-9a8a-2392c1584be9.png" width = 800>
 
 
 ```python
@@ -138,15 +138,20 @@ right_df.describe()
 ```
 
 
- <img src= "https://user-images.githubusercontent.com/66487971/91657330-da986280-eac8-11ea-8842-341fef4c8f1b.png" width = 600>
+ <img src= "https://user-images.githubusercontent.com/66487971/91657330-da986280-eac8-11ea-8842-341fef4c8f1b.png" width = 800>
 
 
 **From here it can be deducted that mean age of the employees who stayed is higher compared to who left, Rate of employees who stayed is higher, Employees who stayed live closer to home, Employees who stayed are generally more satisifed with their jobs and Employees who stayed tend to have higher stock option level.**
 
 
 
+```python
+correlations = employee_df.corr()
+f, ax = plt.subplots(figsize = (20, 20))
+sns.heatmap(correlations, annot = True)
+```
 
-
+ <img src= "https://user-images.githubusercontent.com/66487971/91658596-387d7800-ead2-11ea-9d12-d960d298aa06.png" width = 1000>
 
 
 
