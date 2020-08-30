@@ -319,6 +319,91 @@ sns.heatmap(cm, annot=True)
 
 
 
+```python
+print(classification_report(y_test, y_pred))
+```
+
+
+<img src= "https://user-images.githubusercontent.com/66487971/91659695-1f78c500-eada-11ea-9484-8f53c4d78dda.png" width = 400>
+
+## TRAINING AND EVALUATING A RANDOM FOREST CLASSIFIER
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+```
+
+```python
+y_pred = model.predict(X_test)
+cm = confusion_matrix(y_pred, y_test)
+sns.heatmap(cm, annot=True)
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91659806-e1c86c00-eada-11ea-82de-a65d310bee21.png" width = 500>
+
+```python
+
+print(classification_report(y_test, y_pred))
+
+```
+
+
+<img src= "https://user-images.githubusercontent.com/66487971/91659822-002e6780-eadb-11ea-84ad-091361ff4321.png" width = 500>
+
+## TRAINING AND EVALUATING A DEEP LEARNING MODEL 
+
+```python
+
+import tensorflow as tf
+
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Dense(units=500, activation='relu', input_shape=(50, )))
+model.add(tf.keras.layers.Dense(units=500, activation='relu'))
+model.add(tf.keras.layers.Dense(units=500, activation='relu'))
+model.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
+
+model.compile(optimizer='Adam', loss='binary_crossentropy', metrics = ['accuracy'])
+
+epochs_hist = model.fit(X_train, y_train, epochs = 100, batch_size = 50)
+
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91659973-d32e8480-eadb-11ea-94b9-36004b757c43.png" width = 500>
+
+```python
+
+y_pred = model.predict(X_test)
+
+```
+
+```python
+plt.plot(epochs_hist.history['loss'])
+plt.title('Model Loss Progress During Training')
+plt.xlabel('Epoch')
+plt.ylabel('Training Loss')
+plt.legend(['Training Loss'])
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/87165507-ea6aa600-c2d2-11ea-967d-01efb7f81627.JPG" width = 500>
+
+```python
+plt.plot(epochs_hist.history['accuracy'])
+plt.title('Model Accuracy Progress During Training')
+plt.xlabel('Epoch')
+plt.ylabel('Training Accuracy')
+plt.legend(['Training Accuracy'])
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91660025-36b8b200-eadc-11ea-8f4f-1f0d266902b2.png" width = 500>
+
+´´´python
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, annot=True)
+
+```
+
 
 
 
