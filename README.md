@@ -341,7 +341,7 @@ cm = confusion_matrix(y_pred, y_test)
 sns.heatmap(cm, annot=True)
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/91659806-e1c86c00-eada-11ea-82de-a65d310bee21.png" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/91659806-e1c86c00-eada-11ea-82de-a65d310bee21.png" width = 300>
 
 ```python
 
@@ -350,7 +350,7 @@ print(classification_report(y_test, y_pred))
 ```
 
 
-<img src= "https://user-images.githubusercontent.com/66487971/91659822-002e6780-eadb-11ea-84ad-091361ff4321.png" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/91659822-002e6780-eadb-11ea-84ad-091361ff4321.png" width = 300>
 
 ## TRAINING AND EVALUATING A DEEP LEARNING MODEL 
 
@@ -370,7 +370,7 @@ epochs_hist = model.fit(X_train, y_train, epochs = 100, batch_size = 50)
 
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/91659973-d32e8480-eadb-11ea-94b9-36004b757c43.png" width = 300>
+<img src= "https://user-images.githubusercontent.com/66487971/91659973-d32e8480-eadb-11ea-94b9-36004b757c43.png" width = 900>
 
 ```python
 
@@ -386,7 +386,7 @@ plt.ylabel('Training Loss')
 plt.legend(['Training Loss'])
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/87165507-ea6aa600-c2d2-11ea-967d-01efb7f81627.JPG" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/91660161-4f759780-eadd-11ea-9f4c-bceb2078d8cb.png" width = 500>
 
 ```python
 plt.plot(epochs_hist.history['accuracy'])
@@ -398,7 +398,7 @@ plt.legend(['Training Accuracy'])
 
 <img src= "https://user-images.githubusercontent.com/66487971/91660025-36b8b200-eadc-11ea-8f4f-1f0d266902b2.png" width = 500>
 
-´´´python
+```python
 cm = confusion_matrix(y_test, y_pred)
 sns.heatmap(cm, annot=True)
 
@@ -416,7 +416,7 @@ print(classification_report(y_test, y_pred))
 
 
 
-#THIS CONCLUDES MY PROJECT HERE. THANKS FOR READING ALL THE WAY THROUGH.
+# THIS CONCLUDES MY PROJECT HERE. THANKS FOR READING ALL THE WAY THROUGH.
 
 
 
