@@ -1,2 +1,154 @@
 # Classification_for_Human_Resources
 Using Deep Learning for a Human Resources Department in order to predict which employees are more likely to quit.
+I will be exploring and analyzing the dataset from [kaggle.com](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset).
+Education
+1 'Below College'
+2 'College'
+3 'Bachelor'
+4 'Master'
+5 'Doctor'
+
+EnvironmentSatisfaction
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+JobInvolvement
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+JobSatisfaction
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+PerformanceRating
+1 'Low'
+2 'Good'
+3 'Excellent'
+4 'Outstanding'
+
+RelationshipSatisfaction
+1 'Low'
+2 'Medium'
+3 'High'
+4 'Very High'
+
+WorkLifeBalance
+1 'Bad'
+2 'Good'
+3 'Better'
+4 'Best'
+
+## Importing the libraries
+
+```python
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+```
+```python
+employee_df = pd.read_csv('Human_Resources.csv')
+employee_df.head()
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91656964-e9314a80-eac5-11ea-979e-2c9d442775a1.png" width = 800>
+
+```python
+employee_df.info()
+```
+<img src= "https://user-images.githubusercontent.com/66487971/91657009-5a70fd80-eac6-11ea-9f79-8d514de362d9.png" width = 400>
+
+```python
+employee_df.describe()
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91657029-8a200580-eac6-11ea-8f38-f4a2fe41437e.png" width = 400>
+
+**Replacing the 'Attritition', 'overtime' and 'Over18' columns with integers before performing any visualizations**
+
+```python
+employee_df['Attrition'] = employee_df['Attrition'].apply(lambda x: 1 if x == 'Yes' else 0)
+employee_df['OverTime'] = employee_df['OverTime'].apply(lambda x: 1 if x == 'Yes' else 0)
+employee_df['Over18'] = employee_df['Over18'].apply(lambda x: 1 if x == 'Y' else 0)
+
+```
+
+**Looking at missing Data**
+
+```python
+
+ sns.heatmap(employee_df.isnull(), yticklabels = False, cbar = False, cmap="Blues")
+ 
+ ```
+ 
+ <img src= "https://user-images.githubusercontent.com/66487971/91657072-e2ef9e00-eac6-11ea-99a5-e4f552345038.png" width = 400>
+
+```python
+
+employee_df.hist(bins = 30, figsize = (20,20), color = 'r')
+
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91657173-b7b97e80-eac7-11ea-920c-2fd87394afca.png" width = 1000>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
