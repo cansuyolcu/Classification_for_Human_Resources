@@ -195,10 +195,51 @@ plt.xlabel('Distance From Home')
 
 
 
+```python
+plt.figure(figsize=(12,7))
+
+sns.kdeplot(left_df['YearsWithCurrManager'], label = 'Employees who left', shade = True, color = 'r')
+sns.kdeplot(stayed_df['YearsWithCurrManager'], label = 'Employees who Stayed', shade = True, color = 'b')
+
+plt.xlabel('Years With Current Manager')
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91658795-0e2cba00-ead4-11ea-9d24-86c307189581.png" width = 700>
+ 
+ ```python
+ 
+ plt.figure(figsize=(12,7))
+
+sns.kdeplot(left_df['TotalWorkingYears'], shade = True, label = 'Employees who left', color = 'r')
+sns.kdeplot(stayed_df['TotalWorkingYears'], shade = True, label = 'Employees who Stayed', color = 'b')
+
+plt.xlabel('Total Working Years')
+
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91658807-2ac8f200-ead4-11ea-9342-130f1836253b.png" width = 700>
+ 
+ 
+ ```python
+ 
+ plt.figure(figsize=(15, 10))
+sns.boxplot(x = 'MonthlyIncome', y = 'Gender', data = employee_df)
+ ```
+ 
+ 
+ 
+ <img src= "https://user-images.githubusercontent.com/66487971/91658820-47fdc080-ead4-11ea-9f35-2898a1a4589c.png" width = 700>
+ 
+ 
+ ```python
+ 
+ plt.figure(figsize=(15, 10))
+sns.boxplot(x = 'MonthlyIncome', y = 'JobRole', data = employee_df)
+ ```
 
 
 
-
+ <img src= "https://user-images.githubusercontent.com/66487971/91658835-682d7f80-ead4-11ea-8e6b-35a2e68d39da.png" width = 700>
 
 
 
