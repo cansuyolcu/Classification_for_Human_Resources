@@ -126,10 +126,22 @@ print("Percentage of employees who did not leave the company (stayed) =", 1.*len
  <img src= "https://user-images.githubusercontent.com/66487971/91657281-6cec3680-eac8-11ea-83d0-2cf9bca582f3.png" width = 600>
 
 
+```python
+left_df.describe()
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91657325-c3597500-eac8-11ea-9a8a-2392c1584be9.png" width = 600>
 
 
+```python
+right_df.describe()
+```
 
 
+ <img src= "https://user-images.githubusercontent.com/66487971/91657330-da986280-eac8-11ea-8842-341fef4c8f1b.png" width = 600>
+
+
+**From here it can be deducted that mean age of the employees who stayed is higher compared to who left, Rate of employees who stayed is higher, Employees who stayed live closer to home, Employees who stayed are generally more satisifed with their jobs and Employees who stayed tend to have higher stock option level.**
 
 
 
