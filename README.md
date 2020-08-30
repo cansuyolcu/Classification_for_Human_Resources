@@ -151,10 +151,46 @@ f, ax = plt.subplots(figsize = (20, 20))
 sns.heatmap(correlations, annot = True)
 ```
 
- <img src= "https://user-images.githubusercontent.com/66487971/91658596-387d7800-ead2-11ea-9d12-d960d298aa06.png" width = 1000>
+ <img src= "https://user-images.githubusercontent.com/66487971/91658596-387d7800-ead2-11ea-9d12-d960d298aa06.png" width = 700>
+ 
+ **Job level is strongly correlated with total working hours. Monthly income is strongly correlated with Job level. Monthly income is strongly correlated with total working hours. Age is stongly correlated with monthly income**
+ 
+ ```python
+ plt.figure(figsize=[25, 12])
+sns.countplot(x = 'Age', hue = 'Attrition', data = employee_df)
+```
 
+ <img src= "https://user-images.githubusercontent.com/66487971/91658710-4bdd1300-ead3-11ea-916c-0560285f4a4c.png" width = 700>
 
+ 
+ ```python
+ 
+ plt.figure(figsize=[20,20])
+plt.subplot(411)
+sns.countplot(x = 'JobRole', hue = 'Attrition', data = employee_df)
+plt.subplot(412)
+sns.countplot(x = 'MaritalStatus', hue = 'Attrition', data = employee_df)
+plt.subplot(413)
+sns.countplot(x = 'JobInvolvement', hue = 'Attrition', data = employee_df)
+plt.subplot(414)
+sns.countplot(x = 'JobLevel', hue = 'Attrition', data = employee_df)
 
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91658744-98c0e980-ead3-11ea-91ac-1fe1159b0483.png" width = 700>
+ 
+ **Single employees tend to leave compared to married and divorced. Sales Representitives tend to leave compared to any other job. Less involved employees tend to leave the company. Less experienced (low job level) tend to leave the company**
+ 
+ ```python
+ plt.figure(figsize=(12,7))
+
+sns.kdeplot(left_df['DistanceFromHome'], label = 'Employees who left', shade = True, color = 'r')
+sns.kdeplot(stayed_df['DistanceFromHome'], label = 'Employees who Stayed', shade = True, color = 'b')
+
+plt.xlabel('Distance From Home')
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91658775-e0477580-ead3-11ea-8023-227cc8206553.png" width = 700>
 
 
 
