@@ -244,8 +244,65 @@ sns.boxplot(x = 'MonthlyIncome', y = 'JobRole', data = employee_df)
  <img src= "https://user-images.githubusercontent.com/66487971/91658835-682d7f80-ead4-11ea-8e6b-35a2e68d39da.png" width = 700>
 
 
+```python
+X_cat = employee_df[['BusinessTravel', 'Department', 'EducationField', 'Gender', 'JobRole', 'MaritalStatus']]
+X_cat
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91658900-c0648180-ead4-11ea-882e-28881c71068e.png" width = 600>
+ 
+ ```python
+ 
+ from sklearn.preprocessing import OneHotEncoder
+onehotencoder = OneHotEncoder()
+X_cat = onehotencoder.fit_transform(X_cat).toarray()
+
+```
+
+```python
+X_cat = pd.DataFrame(X_cat)
+```
+
+```python
+X_numerical = employee_df[['Age', 'DailyRate', 'DistanceFromHome',	'Education', 'EnvironmentSatisfaction', 'HourlyRate', 'JobInvolvement',	'JobLevel',	'JobSatisfaction',	'MonthlyIncome',	'MonthlyRate',	'NumCompaniesWorked',	'OverTime',	'PercentSalaryHike', 'PerformanceRating',	'RelationshipSatisfaction',	'StockOptionLevel',	'TotalWorkingYears'	,'TrainingTimesLastYear'	, 'WorkLifeBalance',	'YearsAtCompany'	,'YearsInCurrentRole', 'YearsSinceLastPromotion',	'YearsWithCurrManager']]
+
+```
+
+```python
+X_all = pd.concat([X_cat, X_numerical], axis = 1)
+
+```
+
+```python
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+X = scaler.fit_transform(X_all)
+```
+
+```python
+y = employee_df['Attrition']
 
 
+```
+## TRAINING AND EVALUATING A LOGISTIC REGRESSION CLASSIFIER
+
+
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25)
+
+
+```
+ 
+ ```python
+ from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+```
 
 
 
