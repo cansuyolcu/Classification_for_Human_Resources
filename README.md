@@ -70,7 +70,7 @@ employee_df.info()
 employee_df.describe()
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/91657029-8a200580-eac6-11ea-8f38-f4a2fe41437e.png" width = 400>
+<img src= "https://user-images.githubusercontent.com/66487971/91657029-8a200580-eac6-11ea-8f38-f4a2fe41437e.png" width = 1000>
 
 **Replacing the 'Attritition', 'overtime' and 'Over18' columns with integers before performing any visualizations**
 
@@ -81,7 +81,7 @@ employee_df['Over18'] = employee_df['Over18'].apply(lambda x: 1 if x == 'Y' else
 
 ```
 
-**Looking at missing Data**
+**Looking at the missing Data**
 
 ```python
 
@@ -98,6 +98,33 @@ employee_df.hist(bins = 30, figsize = (20,20), color = 'r')
 ```
 
  <img src= "https://user-images.githubusercontent.com/66487971/91657173-b7b97e80-eac7-11ea-920c-2fd87394afca.png" width = 1000>
+
+
+**It makes sense to drop 'EmployeeCount' , 'Standardhours' and 'Over18' since they do not change from one employee to the other**
+**I'll drop 'EmployeeNumber' as well**
+
+```python
+employee_df.drop(['EmployeeCount', 'StandardHours', 'Over18', 'EmployeeNumber'], axis=1, inplace=True)
+```
+**I'm dividing the dataframes in order to get a better grasp of the trends**
+
+```python
+left_df        = employee_df[employee_df['Attrition'] == 1]
+stayed_df      = employee_df[employee_df['Attrition'] == 0]
+```
+
+```python
+print("Total =", len(employee_df))
+
+print("Number of employees who left the company =", len(left_df))
+print("Percentage of employees who left the company =", 1.*len(left_df)/len(employee_df)*100.0, "%")
+ 
+print("Number of employees who did not leave the company (stayed) =", len(stayed_df))
+print("Percentage of employees who did not leave the company (stayed) =", 1.*len(stayed_df)/len(employee_df)*100.0, "%")
+```
+
+ <img src= "https://user-images.githubusercontent.com/66487971/91657281-6cec3680-eac8-11ea-83d0-2cf9bca582f3.png" width = 600>
+
 
 
 
