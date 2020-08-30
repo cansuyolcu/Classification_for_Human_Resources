@@ -370,7 +370,7 @@ epochs_hist = model.fit(X_train, y_train, epochs = 100, batch_size = 50)
 
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/91659973-d32e8480-eadb-11ea-94b9-36004b757c43.png" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/91659973-d32e8480-eadb-11ea-94b9-36004b757c43.png" width = 300>
 
 ```python
 
@@ -404,9 +404,19 @@ sns.heatmap(cm, annot=True)
 
 ```
 
+<img src= "https://user-images.githubusercontent.com/66487971/91660060-826b5b80-eadc-11ea-8813-ad6c831629ce.png" width = 300>
+
+```python
+print(classification_report(y_test, y_pred))
+```
+
+
+<img src= "https://user-images.githubusercontent.com/66487971/91660081-9f079380-eadc-11ea-9449-919cce74558b.png" width = 300>
 
 
 
+
+#THIS CONCLUDES MY PROJECT HERE. THANKS FOR READING ALL THE WAY THROUGH.
 
 
 
