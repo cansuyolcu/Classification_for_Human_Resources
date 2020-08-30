@@ -315,7 +315,7 @@ cm = confusion_matrix(y_pred, y_test)
 sns.heatmap(cm, annot=True)
 ```
 
-<img src= "https://user-images.githubusercontent.com/66487971/91659036-b727e480-ead5-11ea-8b23-8441a8d80f23.png" width = 500>
+<img src= "https://user-images.githubusercontent.com/66487971/91659036-b727e480-ead5-11ea-8b23-8441a8d80f23.png" width = 400>
 
 
 
