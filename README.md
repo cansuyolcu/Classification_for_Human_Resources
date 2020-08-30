@@ -255,13 +255,10 @@ X_cat
  
  from sklearn.preprocessing import OneHotEncoder
 onehotencoder = OneHotEncoder()
-X_cat = onehotencoder.fit_transform(X_cat).toarray()
+X_cat = onehotencoder.fit_transform(X_cat)
 
 ```
 
-```python
-X_cat = pd.DataFrame(X_cat)
-```
 
 ```python
 X_numerical = employee_df[['Age', 'DailyRate', 'DistanceFromHome',	'Education', 'EnvironmentSatisfaction', 'HourlyRate', 'JobInvolvement',	'JobLevel',	'JobSatisfaction',	'MonthlyIncome',	'MonthlyRate',	'NumCompaniesWorked',	'OverTime',	'PercentSalaryHike', 'PerformanceRating',	'RelationshipSatisfaction',	'StockOptionLevel',	'TotalWorkingYears'	,'TrainingTimesLastYear'	, 'WorkLifeBalance',	'YearsAtCompany'	,'YearsInCurrentRole', 'YearsSinceLastPromotion',	'YearsWithCurrManager']]
@@ -304,6 +301,21 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 ```
 
+```python
+from sklearn.metrics import confusion_matrix, classification_report
+
+print("Accuracy {} %".format( 100 * accuracy_score(y_pred, y_test)))
+
+```
+
+Accuracy 89.94565217391305 %
+
+```python
+cm = confusion_matrix(y_pred, y_test)
+sns.heatmap(cm, annot=True)
+```
+
+<img src= "https://user-images.githubusercontent.com/66487971/91659036-b727e480-ead5-11ea-8b23-8441a8d80f23.png" width = 500>
 
 
 
